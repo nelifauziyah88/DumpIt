@@ -270,39 +270,39 @@
           <svg viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
             <defs>
               <linearGradient id="g3bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#f9eaee" />
-                <stop offset="100%" stop-color="#fce4e4" />
+                <stop offset="0%" stop-color="#fdeef1" />
+                <stop offset="100%" stop-color="#f5cdd5" />
               </linearGradient>
               <linearGradient id="g3card" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#ffffff" />
-                <stop offset="100%" stop-color="#fff5f5" />
+                <stop offset="100%" stop-color="#fdeef1" />
               </linearGradient>
             </defs>
             <rect width="240" height="320" fill="url(#g3bg)" />
             <text x="120" y="32" text-anchor="middle" font-size="15" font-family="Georgia,serif" font-style="italic" fill="#c2415c">Sweet Memories</text>
-            <line x1="40" y1="40" x2="200" y2="40" stroke="#e8a0b0" stroke-width="0.8" />
+            <line x1="40" y1="40" x2="200" y2="40" stroke="#d4627a" stroke-width="0.8" />
             <rect x="20" y="50" width="90" height="100" rx="5" fill="url(#g3card)" stroke="#e8a0b0" stroke-width="1.2" />
-            <rect x="28" y="58" width="74" height="74" rx="3" fill="#ffd6d6" opacity="0.6" />
-            <circle cx="48" cy="78" r="6" fill="#e8a0b0" opacity="0.5" />
-            <polyline points="28,122 48,100 66,110 84,88 102,122" fill="none" stroke="#e8a0b0" stroke-width="1.5" opacity="0.7" />
-            <text x="65" y="144" text-anchor="middle" font-size="7" font-family="Georgia,serif" font-style="italic" fill="#7a3a50" opacity="0.7">memory 01</text>
+            <rect x="28" y="58" width="74" height="74" rx="3" fill="#f5cdd5" opacity="0.7" />
+            <circle cx="48" cy="78" r="6" fill="#d4627a" opacity="0.4" />
+            <polyline points="28,122 48,100 66,110 84,88 102,122" fill="none" stroke="#c2415c" stroke-width="1.5" opacity="0.5" />
+            <text x="65" y="144" text-anchor="middle" font-size="7" font-family="Georgia,serif" font-style="italic" fill="#c2415c" opacity="0.7">memory 01</text>
             <rect x="130" y="50" width="90" height="100" rx="5" fill="url(#g3card)" stroke="#e8a0b0" stroke-width="1.2" />
-            <rect x="138" y="58" width="74" height="74" rx="3" fill="#ffd6d6" opacity="0.6" />
-            <circle cx="178" cy="82" r="5" fill="#e8a0b0" opacity="0.5" />
-            <polyline points="138,122 155,106 170,115 185,95 212,122" fill="none" stroke="#e8a0b0" stroke-width="1.5" opacity="0.7" />
-            <text x="175" y="144" text-anchor="middle" font-size="7" font-family="Georgia,serif" font-style="italic" fill="#7a3a50" opacity="0.7">memory 02</text>
+            <rect x="138" y="58" width="74" height="74" rx="3" fill="#f5cdd5" opacity="0.7" />
+            <circle cx="178" cy="82" r="5" fill="#d4627a" opacity="0.4" />
+            <polyline points="138,122 155,106 170,115 185,95 212,122" fill="none" stroke="#c2415c" stroke-width="1.5" opacity="0.5" />
+            <text x="175" y="144" text-anchor="middle" font-size="7" font-family="Georgia,serif" font-style="italic" fill="#c2415c" opacity="0.7">memory 02</text>
             <rect x="20" y="165" width="90" height="100" rx="5" fill="url(#g3card)" stroke="#e8a0b0" stroke-width="1.2" />
-            <rect x="28" y="173" width="74" height="74" rx="3" fill="#ffd6d6" opacity="0.6" />
-            <circle cx="55" cy="193" r="7" fill="#e8a0b0" opacity="0.5" />
-            <polyline points="28,237 52,215 68,226 86,205 102,237" fill="none" stroke="#e8a0b0" stroke-width="1.5" opacity="0.7" />
-            <text x="65" y="259" text-anchor="middle" font-size="7" font-family="Georgia,serif" font-style="italic" fill="#7a3a50" opacity="0.7">memory 03</text>
+            <rect x="28" y="173" width="74" height="74" rx="3" fill="#f5cdd5" opacity="0.7" />
+            <circle cx="55" cy="193" r="7" fill="#d4627a" opacity="0.4" />
+            <polyline points="28,237 52,215 68,226 86,205 102,237" fill="none" stroke="#c2415c" stroke-width="1.5" opacity="0.5" />
+            <text x="65" y="259" text-anchor="middle" font-size="7" font-family="Georgia,serif" font-style="italic" fill="#c2415c" opacity="0.7">memory 03</text>
             <rect x="130" y="165" width="90" height="100" rx="5" fill="url(#g3card)" stroke="#e8a0b0" stroke-width="1.2" />
-            <rect x="138" y="173" width="74" height="74" rx="3" fill="#ffd6d6" opacity="0.6" />
-            <circle cx="165" cy="196" r="6" fill="#e8a0b0" opacity="0.5" />
-            <polyline points="138,237 158,218 174,228 191,208 212,237" fill="none" stroke="#e8a0b0" stroke-width="1.5" opacity="0.7" />
-            <text x="175" y="259" text-anchor="middle" font-size="7" font-family="Georgia,serif" font-style="italic" fill="#7a3a50" opacity="0.7">memory 04</text>
-            <text x="120" y="282" text-anchor="middle" font-size="9" font-family="serif" fill="#c2415c" opacity="0.7">✦ ♥ ✦</text>
-            <text x="120" y="305" text-anchor="middle" font-size="7" font-family="sans-serif" fill="#9a7b6a" letter-spacing="1.5">FLIPBOOK</text>
+            <rect x="138" y="173" width="74" height="74" rx="3" fill="#f5cdd5" opacity="0.7" />
+            <circle cx="165" cy="196" r="6" fill="#d4627a" opacity="0.4" />
+            <polyline points="138,237 158,218 174,228 191,208 212,237" fill="none" stroke="#c2415c" stroke-width="1.5" opacity="0.5" />
+            <text x="175" y="259" text-anchor="middle" font-size="7" font-family="Georgia,serif" font-style="italic" fill="#c2415c" opacity="0.7">memory 04</text>
+            <text x="120" y="282" text-anchor="middle" font-size="9" font-family="serif" fill="#c2415c" opacity="0.8">✦ ♥ ✦</text>
+            <text x="120" y="305" text-anchor="middle" font-size="7" font-family="sans-serif" fill="#9a7080" letter-spacing="1.5">FLIPBOOK</text>
           </svg>
         </div>
         <div class="card-info">
