@@ -7,9 +7,9 @@
     <title>Buat Scrapbook</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23c0392b'/%3E%3Cstop offset='100%25' stop-color='%23f08080'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='4' width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Crect x='10' y='10' width='14' height='20' rx='2' fill='white' opacity='.95'/%3E%3Crect x='12' y='14' width='10' height='1.5' rx='1' fill='%23c0392b' opacity='.5'/%3E%3Crect x='12' y='17' width='8' height='1.5' rx='1' fill='%23c0392b' opacity='.5'/%3E%3Crect x='12' y='20' width='9' height='1.5' rx='1' fill='%23c0392b' opacity='.5'/%3E%3Crect x='12' y='23' width='6' height='1.5' rx='1' fill='%23c0392b' opacity='.5'/%3E%3Crect x='25' y='11' width='2' height='18' rx='1' fill='white' opacity='.4'/%3E%3Cpath d='M27 11 Q32 14 32 20 Q32 26 27 29' stroke='white' stroke-width='1.5' fill='none' opacity='.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234a7c59'/%3E%3Cstop offset='100%25' stop-color='%2388b99a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='4' width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Crect x='10' y='10' width='14' height='20' rx='2' fill='white' opacity='.95'/%3E%3Crect x='12' y='14' width='10' height='1.5' rx='1' fill='%234a7c59' opacity='.5'/%3E%3Crect x='12' y='17' width='8' height='1.5' rx='1' fill='%234a7c59' opacity='.5'/%3E%3Crect x='12' y='20' width='9' height='1.5' rx='1' fill='%234a7c59' opacity='.5'/%3E%3Crect x='12' y='23' width='6' height='1.5' rx='1' fill='%234a7c59' opacity='.5'/%3E%3Crect x='25' y='11' width='2' height='18' rx='1' fill='white' opacity='.4'/%3E%3Cpath d='M27 11 Q32 14 32 20 Q32 26 27 29' stroke='white' stroke-width='1.5' fill='none' opacity='.6' stroke-linecap='round'/%3E%3C/svg%3E" />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/create_flipbook1.css" />
+    <link rel="stylesheet" href="css/create_flipbook2.css" />
 </head>
 
 <body>
@@ -17,11 +17,11 @@
     <nav>
         <a href="index.php" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="28" height="28">
-                <rect x="3" y="3" width="30" height="30" rx="7" fill="#8b1a1a" />
+                <rect x="3" y="3" width="30" height="30" rx="7" fill="#3a6b49" />
                 <rect x="8" y="8" width="13" height="19" rx="2" fill="white" opacity=".95" />
-                <rect x="10" y="12" width="9" height="1.4" rx="1" fill="#8b1a1a" opacity=".45" />
-                <rect x="10" y="15" width="7" height="1.4" rx="1" fill="#8b1a1a" opacity=".45" />
-                <rect x="10" y="18" width="8" height="1.4" rx="1" fill="#8b1a1a" opacity=".45" />
+                <rect x="10" y="12" width="9" height="1.4" rx="1" fill="#3a6b49" opacity=".45" />
+                <rect x="10" y="15" width="7" height="1.4" rx="1" fill="#3a6b49" opacity=".45" />
+                <rect x="10" y="18" width="8" height="1.4" rx="1" fill="#3a6b49" opacity=".45" />
                 <rect x="23" y="9" width="2" height="17" rx="1" fill="white" opacity=".35" />
                 <path d="M25 9 Q30 13 30 18 Q30 23 25 27" stroke="white" stroke-width="1.4" fill="none" opacity=".55" stroke-linecap="round" />
             </svg>
@@ -53,8 +53,14 @@
     </div>
 
     <div class="header">
-        <h1>Anniversary Vol. 1</h1>
+        <div class="header-deco header-deco--left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity=".18"><path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 6a6 6 0 0 1 0 12"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h1>Sweet Memories Vol. 2</h1>
         <p>Isi nama & upload foto — semua teks sudah otomatis dari template</p>
+        <div class="header-deco header-deco--right">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity=".18"><path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 6a6 6 0 0 1 0 12"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
     </div>
 
     <div class="main">
@@ -65,7 +71,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                     </svg>
-                    Anniversary Vol. 1
+                    Sweet Memories Vol. 2
                 </div>
                 <div class="tag">
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -118,7 +124,7 @@
                         <input type="file" accept="image/*" onchange="handleCover(event)">
                         <img id="coverImg" alt="cover">
                         <div class="drop-label" id="coverPlaceholder">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3a6b49" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="3" width="18" height="18" rx="2" />
                                 <circle cx="8.5" cy="8.5" r="1.5" />
                                 <polyline points="21 15 16 10 5 21" />
@@ -153,6 +159,8 @@
                 </div>
                 <div class="prev-body">
                     <div class="mini-book">
+                        <div class="mini-deco mini-deco--tl">✿</div>
+                        <div class="mini-deco mini-deco--br">✿</div>
                         <div class="mini-frame" id="miniFrame">
                             <img id="miniCoverImg" alt="">
                             <svg xmlns="http://www.w3.org/2000/svg" id="miniPh" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
@@ -162,7 +170,7 @@
                             </svg>
                         </div>
                         <div class="mini-names" id="miniNames">Nama &hearts; Nama</div>
-                        <div class="mini-sub">Anniversary Vol. 1</div>
+                        <div class="mini-sub">Sweet Memories Vol. 2</div>
                     </div>
                     <div class="count-row">
                         <div class="count-lbl">Foto Terupload</div>
@@ -171,7 +179,7 @@
                 </div>
             </div>
 
-            <a href="slug_link_flipbook1.php" class="btn-create" onclick="saveData(); return true;">
+            <a href="slug_link_flipbook2.php" class="btn-create" onclick="saveData(); return true;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
@@ -182,7 +190,7 @@
 
     </div>
 
-    <script src="js/create_flipbook1.js"></script>
+    <script src="js/create_flipbook2.js"></script>
 </body>
 
 </html>

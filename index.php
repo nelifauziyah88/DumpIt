@@ -221,45 +221,45 @@
           <svg viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
             <defs>
               <linearGradient id="g2bg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fdf8f4" />
-                <stop offset="100%" stop-color="#f5ede0" />
+                <stop offset="0%" stop-color="#f5faf4" />
+                <stop offset="100%" stop-color="#eaf3e8" />
               </linearGradient>
               <linearGradient id="g2accent" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#8b1a1a" />
-                <stop offset="100%" stop-color="#c03030" />
+                <stop offset="0%" stop-color="#3a6b49" />
+                <stop offset="100%" stop-color="#4e8c61" />
               </linearGradient>
             </defs>
             <rect width="240" height="320" fill="url(#g2bg)" />
-            <line x1="20" y1="70" x2="220" y2="70" stroke="#eadbc5" stroke-width="0.8" />
-            <line x1="20" y1="93" x2="220" y2="93" stroke="#eadbc5" stroke-width="0.8" />
-            <line x1="20" y1="116" x2="220" y2="116" stroke="#eadbc5" stroke-width="0.8" />
-            <line x1="20" y1="139" x2="220" y2="139" stroke="#eadbc5" stroke-width="0.8" />
-            <line x1="20" y1="162" x2="220" y2="162" stroke="#eadbc5" stroke-width="0.8" />
-            <line x1="20" y1="185" x2="220" y2="185" stroke="#eadbc5" stroke-width="0.8" />
-            <line x1="20" y1="208" x2="220" y2="208" stroke="#eadbc5" stroke-width="0.8" />
+            <line x1="20" y1="70" x2="220" y2="70" stroke="#c8dfc5" stroke-width="0.8" />
+            <line x1="20" y1="93" x2="220" y2="93" stroke="#c8dfc5" stroke-width="0.8" />
+            <line x1="20" y1="116" x2="220" y2="116" stroke="#c8dfc5" stroke-width="0.8" />
+            <line x1="20" y1="139" x2="220" y2="139" stroke="#c8dfc5" stroke-width="0.8" />
+            <line x1="20" y1="162" x2="220" y2="162" stroke="#c8dfc5" stroke-width="0.8" />
+            <line x1="20" y1="185" x2="220" y2="185" stroke="#c8dfc5" stroke-width="0.8" />
+            <line x1="20" y1="208" x2="220" y2="208" stroke="#c8dfc5" stroke-width="0.8" />
             <rect x="0" y="0" width="240" height="44" fill="url(#g2accent)" />
             <rect x="184" y="8" width="40" height="28" rx="3" fill="none" stroke="rgba(255,255,255,0.50)" stroke-width="1.2" />
             <text x="204" y="20" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.70)">♥</text>
             <text x="204" y="30" text-anchor="middle" font-size="5" font-family="sans-serif" fill="rgba(255,255,255,0.50)" font-weight="700" letter-spacing="1">LOVE</text>
             <text x="24" y="20" font-size="13" font-family="Georgia,serif" font-style="italic" fill="rgba(255,255,255,0.92)">A Letter For You</text>
             <text x="24" y="34" font-size="7" font-family="sans-serif" fill="rgba(255,255,255,0.50)" letter-spacing="0.5">To: Sayang • From: Aku</text>
-            <rect x="20" y="76" width="140" height="6" rx="3" fill="#e2cdb8" opacity="0.7" />
-            <rect x="20" y="99" width="160" height="6" rx="3" fill="#e2cdb8" opacity="0.7" />
-            <rect x="20" y="122" width="120" height="6" rx="3" fill="#e2cdb8" opacity="0.7" />
-            <rect x="20" y="145" width="150" height="6" rx="3" fill="#e2cdb8" opacity="0.7" />
-            <rect x="20" y="168" width="100" height="6" rx="3" fill="#e2cdb8" opacity="0.7" />
-            <rect x="20" y="191" width="130" height="6" rx="3" fill="#e2cdb8" opacity="0.7" />
-            <text x="155" y="240" font-size="13" font-family="Georgia,serif" font-style="italic" fill="#8b1a1a" opacity="0.8">Yours always ♥</text>
-            <text x="120" y="285" text-anchor="middle" font-size="9" font-family="serif" fill="#9a7b6a" opacity="0.6">✦ ♥ ✦</text>
-            <text x="120" y="305" text-anchor="middle" font-size="7" font-family="sans-serif" fill="#b07070" letter-spacing="1.5">FLIPBOOK</text>
+            <rect x="20" y="76" width="140" height="6" rx="3" fill="#c8dfc5" opacity="0.7" />
+            <rect x="20" y="99" width="160" height="6" rx="3" fill="#c8dfc5" opacity="0.7" />
+            <rect x="20" y="122" width="120" height="6" rx="3" fill="#c8dfc5" opacity="0.7" />
+            <rect x="20" y="145" width="150" height="6" rx="3" fill="#c8dfc5" opacity="0.7" />
+            <rect x="20" y="168" width="100" height="6" rx="3" fill="#c8dfc5" opacity="0.7" />
+            <rect x="20" y="191" width="130" height="6" rx="3" fill="#c8dfc5" opacity="0.7" />
+            <text x="155" y="240" font-size="13" font-family="Georgia,serif" font-style="italic" fill="#3a6b49" opacity="0.8">Yours always ♥</text>
+            <text x="120" y="285" text-anchor="middle" font-size="9" font-family="serif" fill="#6b8f72" opacity="0.6">✦ ♥ ✦</text>
+            <text x="120" y="305" text-anchor="middle" font-size="7" font-family="sans-serif" fill="#6aab7e" letter-spacing="1.5">FLIPBOOK</text>
           </svg>
         </div>
         <div class="card-info">
           <span class="card-name">Letters to You</span>
           <span class="card-tag">Flipbook • Surat Cinta</span>
           <div class="card-buttons">
-            <a href="create_flipbook2.php" class="btn-use">Pakai Template</a>
-            <a href="preview/template-2.pdf" class="btn-preview" target="_blank">Preview</a>
+            <a href="create_flipbook2.php" class="btn-use" style="background:#3a6b49;">Pakai Template</a>
+            <a href="preview/template-2.pdf" class="btn-preview" target="_blank" style="border-color:#6aab7e;color:#3a6b49;">Preview</a>
           </div>
         </div>
       </div>
