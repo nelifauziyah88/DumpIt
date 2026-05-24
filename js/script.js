@@ -1,10 +1,6 @@
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
 const revealElements = document.querySelectorAll(
@@ -16,9 +12,7 @@ revealElements.forEach(el => el.classList.add('reveal'));
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, i * 80);
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
       observer.unobserve(entry.target);
     }
   });
