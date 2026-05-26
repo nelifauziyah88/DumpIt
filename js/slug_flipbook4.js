@@ -33,7 +33,7 @@ function init() {
   document.getElementById("pairNames").innerHTML =
     (data.name1 || "Nama") + " &hearts; " + (data.name2 || "Nama");
   document.getElementById("linkBox").textContent = "dumpit.app/s/" + slug;
-  document.getElementById("flipbookBtn").href = "flipbook1.php?slug=" + slug;
+  document.getElementById("flipbookBtn").href = "flipbook4.php?slug=" + slug;
 }
 
 function copyLink() {
@@ -94,7 +94,7 @@ function downloadPDF() {
     clearInterval(iv);
     overlay.style.display = "none";
     window.open(
-      "flipbook1.php?slug=" + slug + "&print=1&size=" + selectedSize,
+      "flipbook4.php?slug=" + slug + "&print=1&size=" + selectedSize,
       "_blank",
     );
   }, 2700);
