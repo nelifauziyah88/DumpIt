@@ -315,9 +315,102 @@
         </div>
       </div>
 
+      <!-- ── Card 4 : Timeless Romance ── -->
+      <!-- ── Card 4 : Timeless Romance ── -->
+      <div class="card">
+        <div class="card-preview">
+          <svg viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="woodBase" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5c3a1e" />
+                <stop offset="40%" stop-color="#7a4a28" />
+                <stop offset="100%" stop-color="#4a2c12" />
+              </linearGradient>
+              <linearGradient id="woodLight" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="rgba(255,220,160,0.06)" />
+                <stop offset="30%" stop-color="rgba(255,220,160,0.13)" />
+                <stop offset="60%" stop-color="rgba(255,220,160,0.05)" />
+                <stop offset="100%" stop-color="rgba(255,220,160,0.08)" />
+              </linearGradient>
+              <linearGradient id="parchment" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fdf6e3" />
+                <stop offset="100%" stop-color="#f5e9c8" />
+              </linearGradient>
+              <linearGradient id="grainV" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(30,10,0,0.08)" />
+                <stop offset="50%" stop-color="rgba(30,10,0,0)" />
+                <stop offset="100%" stop-color="rgba(30,10,0,0.10)" />
+              </linearGradient>
+            </defs>
+
+            <rect width="240" height="320" fill="url(#woodBase)" />
+
+            <line x1="0" y1="18" x2="240" y2="22" stroke="rgba(255,200,120,0.10)" stroke-width="2.5" />
+            <line x1="0" y1="38" x2="240" y2="35" stroke="rgba(180,100,30,0.10)" stroke-width="1.5" />
+            <line x1="0" y1="55" x2="240" y2="58" stroke="rgba(255,200,120,0.07)" stroke-width="2" />
+            <line x1="0" y1="72" x2="240" y2="70" stroke="rgba(180,100,30,0.08)" stroke-width="1" />
+            <line x1="0" y1="90" x2="240" y2="94" stroke="rgba(255,200,120,0.09)" stroke-width="1.8" />
+            <line x1="0" y1="115" x2="240" y2="112" stroke="rgba(180,100,30,0.07)" stroke-width="1.2" />
+            <line x1="0" y1="140" x2="240" y2="143" stroke="rgba(255,200,120,0.08)" stroke-width="1.5" />
+            <line x1="0" y1="172" x2="240" y2="170" stroke="rgba(180,100,30,0.06)" stroke-width="2" />
+            <line x1="0" y1="200" x2="240" y2="204" stroke="rgba(255,200,120,0.09)" stroke-width="1.3" />
+            <line x1="0" y1="228" x2="240" y2="225" stroke="rgba(180,100,30,0.07)" stroke-width="1.8" />
+            <line x1="0" y1="255" x2="240" y2="258" stroke="rgba(255,200,120,0.06)" stroke-width="1.2" />
+            <line x1="0" y1="285" x2="240" y2="282" stroke="rgba(180,100,30,0.08)" stroke-width="1.5" />
+
+            <rect width="240" height="320" fill="url(#woodLight)" />
+            <rect width="240" height="320" fill="url(#grainV)" />
+
+            <rect x="14" y="14" width="212" height="292" rx="4" fill="none" stroke="rgba(255,200,120,0.22)" stroke-width="1" />
+            <rect x="18" y="18" width="204" height="284" rx="3" fill="none" stroke="rgba(255,200,120,0.10)" stroke-width="0.5" />
+
+            <circle cx="20" cy="20" r="4" fill="rgba(30,10,0,0.35)" />
+            <circle cx="220" cy="20" r="4" fill="rgba(30,10,0,0.35)" />
+            <circle cx="20" cy="300" r="4" fill="rgba(30,10,0,0.35)" />
+            <circle cx="220" cy="300" r="4" fill="rgba(30,10,0,0.35)" />
+            <circle cx="20" cy="20" r="2" fill="rgba(255,200,120,0.40)" />
+            <circle cx="220" cy="20" r="2" fill="rgba(255,200,120,0.40)" />
+            <circle cx="20" cy="300" r="2" fill="rgba(255,200,120,0.40)" />
+            <circle cx="220" cy="300" r="2" fill="rgba(255,200,120,0.40)" />
+
+            <rect x="30" y="30" width="180" height="170" rx="5" fill="url(#parchment)" opacity="0.95" />
+            <rect x="30" y="30" width="180" height="170" rx="5" fill="none" stroke="rgba(120,70,20,0.30)" stroke-width="1" />
+            <line x1="34" y1="34" x2="206" y2="34" stroke="rgba(120,70,20,0.12)" stroke-width="0.5" />
+            <line x1="34" y1="196" x2="206" y2="196" stroke="rgba(120,70,20,0.12)" stroke-width="0.5" />
+
+            <rect x="44" y="42" width="152" height="108" rx="3" fill="rgba(140,90,40,0.10)" stroke="rgba(120,70,20,0.20)" stroke-width="0.8" />
+            <circle cx="72" cy="72" r="9" fill="rgba(140,90,40,0.18)" />
+            <polyline points="44,140 68,116 92,128 118,102 152,118 196,140" fill="none" stroke="rgba(120,70,20,0.22)" stroke-width="1.8" />
+            <text x="120" y="172" text-anchor="middle" font-size="7.5" font-family="Georgia,serif" font-style="italic" fill="rgba(100,55,15,0.55)" letter-spacing="0.5">captured in time</text>
+
+            <line x1="50" y1="220" x2="190" y2="220" stroke="rgba(255,200,120,0.20)" stroke-width="1" />
+            <text x="120" y="213" text-anchor="middle" font-size="14" font-family="Georgia,serif" font-style="italic" fill="rgba(255,220,160,0.92)" letter-spacing="0.5">Timeless Romance</text>
+            <text x="120" y="236" text-anchor="middle" font-size="8" font-family="Georgia,serif" font-style="italic" fill="rgba(255,200,120,0.45)">A ♥ B</text>
+
+            <path d="M90 254 Q120 244 150 254" stroke="rgba(255,200,120,0.25)" stroke-width="0.8" fill="none" />
+            <text x="120" y="260" text-anchor="middle" font-size="7.5" font-family="sans-serif" fill="rgba(255,200,120,0.28)" letter-spacing="2">FLIPBOOK</text>
+            <path d="M70 270 Q90 262 120 270 Q150 278 170 270" stroke="rgba(255,200,120,0.15)" stroke-width="0.6" fill="none" />
+            <circle cx="108" cy="285" r="3" fill="rgba(255,200,120,0.20)" />
+            <circle cx="120" cy="287" r="4" fill="rgba(255,200,120,0.25)" />
+            <circle cx="132" cy="285" r="3" fill="rgba(255,200,120,0.20)" />
+
+            <rect x="0" y="0" width="8" height="320" fill="rgba(0,0,0,0.20)" />
+            <rect x="0" y="0" width="4" height="320" fill="rgba(0,0,0,0.12)" />
+            <rect x="0" y="0" width="240" height="320" fill="rgba(0,0,0,0.04)" />
+          </svg>
+        </div>
+        <div class="card-info">
+          <span class="card-name">Timeless Romance</span>
+          <span class="card-tag">Flipbook • Kayu Klasik</span>
+          <div class="card-buttons">
+            <a href="create_flipbook4.php" class="btn-use" style="background:#7a4a28;">Pakai Template</a>
+            <a href="preview/template-4.pdf" class="btn-preview" target="_blank" style="border-color:#a0703a;color:#5c3a1e;">Preview</a>
+          </div>
+        </div>
+      </div>
+
       <?php
       $placeholders = [
-        4 => ['Timeless Romance',  'Flipbook • Putih Elegan'],
         5 => ['Golden Moments',    'Flipbook • Emas & Krem'],
         6 => ['Together Always',   'Flipbook • Navy & Rose'],
         7 => ['Forever & A Day',   'Flipbook • Pastel Lembut'],
@@ -326,7 +419,6 @@
       ];
 
       $gradients = [
-        4 => ['#f5f0e8', '#e8dcc8'],
         5 => ['#fdf5e0', '#f5e0a0'],
         6 => ['#e8eef5', '#c8d8e8'],
         7 => ['#f5eef8', '#e8d8f0'],
