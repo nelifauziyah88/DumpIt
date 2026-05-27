@@ -1,12 +1,12 @@
 :root {
-  --green:   #3a6b49;
-  --green2:  #4e8c61;
-  --cream:   #f5faf4;
-  --parch:   #eaf3e8;
-  --border:  #c8dfc5;
-  --text:    #0f1f14;
-  --muted:   #6b8f72;
-  --white:   #fff;
+  --green: #3a6b49;
+  --green2: #4e8c61;
+  --cream: #f5faf4;
+  --parch: #eaf3e8;
+  --border: #c8dfc5;
+  --text: #0f1f14;
+  --muted: #6b8f72;
+  --white: #fff;
   --success: #2a7a4b;
 }
 
@@ -144,8 +144,16 @@ nav {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(106, 171, 126, 0.2) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 50%, rgba(58, 107, 73, 0.25) 0%, transparent 60%);
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(106, 171, 126, 0.2) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 50%,
+      rgba(58, 107, 73, 0.25) 0%,
+      transparent 60%
+    );
 }
 
 .header::after {
@@ -423,7 +431,7 @@ nav {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(58, 107, 73, 0.90);
+  background: rgba(58, 107, 73, 0.9);
   display: none;
   flex-direction: column;
   align-items: center;
@@ -442,7 +450,9 @@ nav {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .overlay-text {
@@ -473,5 +483,115 @@ nav {
 
   .share-btn {
     flex: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0 1rem;
+    height: 50px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .back-btn {
+    font-size: 0.78rem;
+  }
+
+  .steps {
+    padding: 0.6rem 1rem;
+  }
+
+  .step-label {
+    font-size: 0.65rem;
+  }
+
+  .step-line {
+    width: 24px;
+  }
+
+  .header {
+    padding: 1.5rem 1rem 1.3rem;
+  }
+
+  .header-check {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.65rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.75rem;
+  }
+
+  .main {
+    margin: 1.5rem auto;
+    padding: 0 1rem 4rem;
+  }
+
+  .name-display .pair {
+    font-size: 1.2rem;
+  }
+
+  .card-head {
+    padding: 0.7rem 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .link-box {
+    font-size: 0.78rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .btn-copy {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .share-btn {
+    font-size: 0.75rem;
+    padding: 0.55rem;
+  }
+
+  .btn-pdf {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-sec,
+  .btn-open {
+    padding: 0.7rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .step-label {
+    display: none;
+  }
+
+  .step-line {
+    width: 16px;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .name-display .pair {
+    font-size: 1.1rem;
   }
 }

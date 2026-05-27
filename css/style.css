@@ -38,6 +38,7 @@ body {
   background: var(--cream);
   color: var(--text-dark);
   overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -137,6 +138,64 @@ body {
 
 .btn-nav:hover { background: var(--red-mid); transform: translateY(-1px); }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+  z-index: 110;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--red-deep);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 99;
+  background: rgba(255, 248, 248, 0.98);
+  backdrop-filter: blur(16px);
+  padding: 5rem 5% 2rem;
+  border-bottom: 1px solid rgba(192, 57, 43, 0.12);
+  flex-direction: column;
+  gap: 0;
+  transform: translateY(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: var(--text-mid);
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(192, 57, 43, 0.08);
+  display: block;
+  transition: color 0.2s;
+}
+
+.mobile-menu a:hover { color: var(--red-deep); }
+
+.mobile-menu a:last-child { border-bottom: none; }
+
 .hero {
   position: relative;
   z-index: 1;
@@ -175,7 +234,7 @@ body {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-size: clamp(2.2rem, 7vw, 5.5rem);
   font-weight: 700;
   line-height: 1.15;
   color: var(--text-dark);
@@ -193,7 +252,7 @@ body {
 
 .hero-subtitle {
   max-width: 560px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.75;
   color: var(--text-mid);
   margin-bottom: 2.5rem;
@@ -324,7 +383,7 @@ body {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 3rem;
@@ -334,14 +393,14 @@ body {
 .features {
   position: relative;
   z-index: 1;
-  padding: 6rem 5%;
+  padding: 5rem 5%;
   text-align: center;
   background: var(--white);
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
@@ -398,7 +457,7 @@ body {
 .how-it-works {
   position: relative;
   z-index: 1;
-  padding: 6rem 5%;
+  padding: 5rem 5%;
   text-align: center;
   background: var(--grad-hero);
 }
@@ -456,7 +515,7 @@ body {
 .about {
   position: relative;
   z-index: 1;
-  padding: 6rem 5%;
+  padding: 5rem 5%;
   background: var(--white);
 }
 
@@ -475,7 +534,7 @@ body {
 
 .about-values {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
   text-align: left;
 }
@@ -496,7 +555,7 @@ body {
 .cta {
   position: relative;
   z-index: 1;
-  padding: 6rem 5%;
+  padding: 5rem 5%;
   text-align: center;
   background: var(--grad-cta);
   overflow: hidden;
@@ -514,7 +573,7 @@ body {
 
 .cta h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 4vw, 3rem);
   color: var(--white);
   margin-bottom: 1rem;
 }
@@ -699,20 +758,310 @@ body {
 
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-@media (max-width: 768px) {
-  .nav-links { display: none; }
+/* ========================
+   TABLET (max 1024px)
+   ======================== */
+@media (max-width: 1024px) {
+  .templates-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
 
-  .steps { flex-direction: column; align-items: center; }
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-  .step-line { width: 2px; height: 30px; margin-top: 0; }
+  .steps {
+    gap: 0;
+  }
 
-  .footer-top   { flex-direction: column; gap: 2rem; }
-  .footer-links { gap: 2rem; }
-
-  .book-mockup      { max-width: 340px; }
-  .templates-grid   { grid-template-columns: repeat(2, 1fr); }
+  .step {
+    min-width: 150px;
+    max-width: 200px;
+  }
 }
 
+/* ========================
+   MOBILE LANDSCAPE / SMALL TABLET (max 768px)
+   ======================== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+
+  .navbar {
+    padding: 0.85rem 5%;
+  }
+
+  .hero {
+    padding: 7rem 5% 3.5rem;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .book-mockup {
+    max-width: 320px;
+  }
+
+  .book-page {
+    padding: 1.25rem;
+    min-height: 200px;
+  }
+
+  .photo-slot { height: 60px; }
+  .slot-2     { height: 46px; }
+  .slot-3     { height: 54px; }
+  .slot-4     { height: 50px; }
+
+  .features {
+    padding: 4rem 5%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .how-it-works {
+    padding: 4rem 5%;
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .step {
+    min-width: unset;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .step-line {
+    width: 2px;
+    height: 32px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .about {
+    padding: 4rem 5%;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .cta {
+    padding: 4rem 5%;
+  }
+
+  .cta p {
+    font-size: 0.95rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-links {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-tagline {
+    max-width: 100%;
+  }
+
+  .templates {
+    padding: 4rem 5%;
+  }
+
+  .templates-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-width: 100%;
+  }
+
+  .card-name { font-size: 0.88rem; }
+  .card-tag  { font-size: 0.68rem; }
+
+  .btn-use,
+  .btn-preview {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .section-title {
+    margin-bottom: 2rem;
+  }
+}
+
+/* ========================
+   MOBILE PORTRAIT (max 480px)
+   ======================== */
 @media (max-width: 480px) {
-  .templates-grid { grid-template-columns: 1fr; }
+  .hero {
+    padding: 6.5rem 4% 3rem;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .book-mockup {
+    max-width: 270px;
+  }
+
+  .book-page {
+    padding: 1rem;
+    min-height: 170px;
+    gap: 0.6rem;
+  }
+
+  .photo-slot { height: 48px; }
+  .slot-2     { height: 38px; }
+  .slot-3     { height: 44px; }
+  .slot-4     { height: 40px; }
+
+  .templates-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .card-info {
+    padding: 0.9rem 1rem;
+  }
+
+  .card-name { font-size: 0.9rem; }
+
+  .btn-use,
+  .btn-preview {
+    font-size: 0.78rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    margin-bottom: 1.75rem;
+  }
+
+  .step {
+    max-width: 260px;
+  }
+
+  .cta {
+    padding: 3.5rem 5%;
+  }
+
+  .cta h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .cta p {
+    font-size: 0.9rem;
+  }
+
+  .cta .btn-primary {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .about {
+    padding: 3.5rem 4%;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .value {
+    padding: 1rem 1.2rem;
+  }
+}
+
+/* ========================
+   VERY SMALL (max 360px)
+   ======================== */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .book-mockup {
+    max-width: 240px;
+  }
+
+  .navbar {
+    padding: 0.75rem 4%;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+  }
 }
