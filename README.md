@@ -36,7 +36,7 @@ DumpIt currently offers 6 Anniversary Flipbook templates:
 ## Features
 
 - Upload your own photos into beautiful templates
-- Save and share as PDF
+- Share url link
 - Personalized flipbook-style scrapbooks
 - Multiple curated themes and layouts
 - Privacy-first — your data stays yours
