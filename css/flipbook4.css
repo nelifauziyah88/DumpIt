@@ -1479,3 +1479,69 @@ body {
   margin-top: 0.9rem;
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  #topbar {
+    padding: 0 0.75rem;
+    height: 44px;
+  }
+
+  .tb-logo {
+    font-size: 0.95rem;
+    gap: 5px;
+  }
+
+  #pageInd {
+    font-size: 0.62rem;
+  }
+
+  .tb-back {
+    font-size: 0.65rem;
+  }
+
+  #prog {
+    top: 44px;
+  }
+
+  #stage {
+    top: 46px;
+    bottom: 50px;
+  }
+
+  #thumbs {
+    height: 50px;
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+  }
+
+  .thumb {
+    width: 24px;
+    height: 32px;
+    font-size: 0.48rem;
+  }
+
+  #swipeHint {
+    font-size: 0.63rem;
+    padding: 4px 12px;
+    bottom: 60px;
+  }
+}
+
+@media (max-width: 360px) {
+  .tb-logo {
+    font-size: 0.88rem;
+  }
+
+  .tb-back {
+    font-size: 0.6rem;
+  }
+
+  #pageInd {
+    font-size: 0.58rem;
+  }
+
+  .thumb {
+    width: 20px;
+    height: 28px;
+  }
+}

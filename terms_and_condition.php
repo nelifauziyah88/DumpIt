@@ -400,7 +400,7 @@
 
     <nav class="navbar">
         <div class="nav-logo">
-            <span class="logo-icon">
+            <a href="index.php" class="logo-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="36" height="36">
                     <defs>
                         <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -417,7 +417,7 @@
                     <rect x="25" y="11" width="2" height="18" rx="1" fill="white" opacity="0.4" />
                     <path d="M27 11 Q32 14 32 20 Q32 26 27 29" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round" />
                 </svg>
-            </span>
+            </a>
             <span class="logo-text">DumpIt</span>
         </div>
         <ul class="nav-links">
