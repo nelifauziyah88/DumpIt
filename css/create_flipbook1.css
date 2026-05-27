@@ -726,3 +726,38 @@ input[type="text"]:focus {
     font-size: 1rem;
   }
 }
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2f7fbd;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(47, 127, 189, 0.28);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.error {
+  background: #d9534f;
+  box-shadow: 0 8px 24px rgba(217, 83, 79, 0.28);
+}
+
+.toast.success {
+  background: #2f7fbd;
+}

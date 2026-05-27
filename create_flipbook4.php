@@ -13,7 +13,9 @@
 </head>
 
 <body>
-
+    <div id="toast" class="toast">
+        <span id="toastText">Pesan toast</span>
+    </div>
     <nav>
         <a href="index.php" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="28" height="28">
@@ -171,7 +173,7 @@
                 </div>
             </div>
 
-            <a href="slug_link_flipbook4.php" class="btn-create" onclick="saveData(); return true;">
+            <a href="#" class="btn-create" onclick="saveData(); return false;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>

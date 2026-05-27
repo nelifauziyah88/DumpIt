@@ -223,7 +223,6 @@
           <span class="card-tag">Flipbook &bull; Merah Klasik</span>
           <div class="card-buttons">
             <a href="create_flipbook1.php" class="btn-use">Pakai Template</a>
-            <a href="preview/template-1.pdf" class="btn-preview" target="_blank">Preview</a>
           </div>
         </div>
       </div>
@@ -278,7 +277,6 @@
           <span class="card-tag">Flipbook &bull; Surat Cinta</span>
           <div class="card-buttons">
             <a href="create_flipbook2.php" class="btn-use" style="background:#3a6b49;">Pakai Template</a>
-            <a href="preview/template-2.pdf" class="btn-preview" target="_blank" style="border-color:#6aab7e;color:#3a6b49;">Preview</a>
           </div>
         </div>
       </div>
@@ -360,7 +358,6 @@
           <span class="card-tag">Flipbook &bull; Kolase Foto</span>
           <div class="card-buttons">
             <a href="create_flipbook3.php" class="btn-use">Pakai Template</a>
-            <a href="preview/template-3.pdf" class="btn-preview" target="_blank">Preview</a>
           </div>
         </div>
       </div>
@@ -418,7 +415,6 @@
           <span class="card-tag">Flipbook &bull; Kayu Klasik</span>
           <div class="card-buttons">
             <a href="create_flipbook4.php" class="btn-use" style="background:#7a4a28;">Pakai Template</a>
-            <a href="preview/template-4.pdf" class="btn-preview" target="_blank" style="border-color:#a0703a;color:#5c3a1e;">Preview</a>
           </div>
         </div>
       </div>
@@ -463,7 +459,6 @@
           <span class="card-tag">Flipbook &bull; Kuning Ceria</span>
           <div class="card-buttons">
             <a href="create_flipbook5.php" class="btn-use" style="background:#d4a017;">Pakai Template</a>
-            <a href="preview/template-5.pdf" class="btn-preview" target="_blank" style="border-color:#f9d84a;color:#8a6a00;">Preview</a>
           </div>
         </div>
       </div>
@@ -509,7 +504,6 @@
           <span class="card-tag">Flipbook &bull; Biru Langit</span>
           <div class="card-buttons">
             <a href="create_flipbook6.php" class="btn-use" style="background:#3a7ab0;">Pakai Template</a>
-            <a href="preview/template-6.pdf" class="btn-preview" target="_blank" style="border-color:#a8cef0;color:#2a5a8a;">Preview</a>
           </div>
         </div>
       </div>

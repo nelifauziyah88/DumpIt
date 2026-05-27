@@ -1,22 +1,46 @@
 let D = {};
-try {
-  const s = localStorage.getItem("dumpitData");
-  if (s) D = JSON.parse(s);
-} catch (e) {}
+(async () => {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug") || localStorage.getItem("dumpitSlug") || "";
+    if (slug) {
+      const res = await fetch(
+        "api/get_flipbook.php?slug=" + encodeURIComponent(slug),
+      );
+      const json = await res.json();
+      if (json.success) {
+        D = {
+          name1: json.nama_kamu,
+          name2: json.nama_pasangan,
+          cover: json.cover ? "/DumpIt/" + json.cover : null,
+          photos: (json.photos || []).map((p) => "/DumpIt/" + p),
+        };
+        localStorage.setItem("dumpitData", JSON.stringify(D));
+      }
+    } else {
+      const s = localStorage.getItem("dumpitData");
+      if (s) D = JSON.parse(s);
+    }
+  } catch (e) {
+    try {
+      const s = localStorage.getItem("dumpitData");
+      if (s) D = JSON.parse(s);
+    } catch (_) {}
+  }
 
-const N1 = D.name1 || "Nama";
-const N2 = D.name2 || "Nama";
-const PHOTOS = D.photos || [];
-const COVER = D.cover || null;
+  const N1 = D.name1 || "Nama";
+  const N2 = D.name2 || "Nama";
+  const PHOTOS = D.photos || [];
+  const COVER = D.cover || null;
 
-const p = (i) => PHOTOS[i] || null;
+  const p = (i) => PHOTOS[i] || null;
 
-const img = (src, cls) =>
-  src
-    ? `<img src="${src}" alt="">`
-    : `<div class="${cls || "ph"}"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".25"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>`;
+  const img = (src, cls) =>
+    src
+      ? `<img src="${src}" alt="">`
+      : `<div class="${cls || "ph"}"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".25"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>`;
 
-const BRANCH_SVG = `<svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1.2" stroke-linecap="round">
+  const BRANCH_SVG = `<svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1.2" stroke-linecap="round">
   <path d="M100 290 C100 250 95 200 100 150 C105 100 95 50 100 10"/>
   <path d="M100 220 C80 205 60 195 40 185"/>
   <path d="M100 200 C120 185 140 170 155 155"/>
@@ -39,7 +63,7 @@ const BRANCH_SVG = `<svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg
   <ellipse cx="148" cy="65" rx="5" ry="7" fill="#a67856" opacity=".5"/>
 </svg>`;
 
-const WREATH_SVG = `<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+  const WREATH_SVG = `<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
   <g stroke="#5a3620" stroke-width="1" stroke-linecap="round" opacity=".7">
     <path d="M80 20 C55 22 35 38 25 60"/>
     <path d="M80 20 C105 22 125 38 135 60"/>
@@ -73,7 +97,7 @@ const WREATH_SVG = `<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg
   </g>
 </svg>`;
 
-const CORNER_SVG = `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="0.8" stroke-linecap="round" opacity=".7">
+  const CORNER_SVG = `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="0.8" stroke-linecap="round" opacity=".7">
   <path d="M5 5 C5 5 25 8 35 20 C45 32 42 50 50 60 C58 70 72 72 75 75"/>
   <path d="M5 5 C10 15 8 25 15 32"/>
   <path d="M35 20 C40 15 48 14 55 18"/>
@@ -84,7 +108,7 @@ const CORNER_SVG = `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" 
   <circle cx="15" cy="32" r="2" fill="#c9a880" opacity=".5"/>
 </svg>`;
 
-const LETTER = `Kepada ${N2} yang selalu aku syukuri kehadirannya
+  const LETTER = `Kepada ${N2} yang selalu aku syukuri kehadirannya
 
 Ada hal-hal kecil yang mungkin jarang aku ungkapkan dengan kata-kata tapi selalu aku rasakan setiap hari
 
@@ -94,69 +118,69 @@ Bersama kamu hari-hari terasa lebih ringan. Bukan karena hidup menjadi mudah tap
 
 Terima kasih sudah memilih untuk ada. Itu lebih dari cukup`;
 
-const THINGS = [
-  "Cara kamu hadir tanpa perlu diminta",
-  "Suara kamu yang jadi hal pertama ingin aku dengar",
-  "Tawa kamu yang membuat semua terasa ringan",
-  "Perhatian kecil yang kamu kira tidak aku sadari",
-  "Cara kamu menatap seolah aku satu-satunya",
-  "Keberanian kamu yang selalu membuatku kagum",
-  "Hangat genggaman tangan kamu",
-  "Cara kamu menyebut namaku",
-  "Kesabaran kamu yang tidak pernah habis",
-  "Cara kamu ada. Itu saja sudah lebih dari cukup",
-];
+  const THINGS = [
+    "Cara kamu hadir tanpa perlu diminta",
+    "Suara kamu yang jadi hal pertama ingin aku dengar",
+    "Tawa kamu yang membuat semua terasa ringan",
+    "Perhatian kecil yang kamu kira tidak aku sadari",
+    "Cara kamu menatap seolah aku satu-satunya",
+    "Keberanian kamu yang selalu membuatku kagum",
+    "Hangat genggaman tangan kamu",
+    "Cara kamu menyebut namaku",
+    "Kesabaran kamu yang tidak pernah habis",
+    "Cara kamu ada. Itu saja sudah lebih dari cukup",
+  ];
 
-const LOVE_NOTES = [
-  {
-    num: "I",
-    txt: "Kamu bukan kebetulan. Kamu adalah jawaban dari doa yang bahkan tidak aku sadari sedang aku panjatkan.",
-    sig: "♡",
-  },
-  {
-    num: "II",
-    txt: "Mencintai kamu terasa seperti bernapas. Mudah dan alami dan tidak bisa aku bayangkan hidup tanpanya.",
-    sig: "♡",
-  },
-  {
-    num: "III",
-    txt: "Di antara semua versi hidupku yang ada kamu di dalamnya adalah versi yang paling aku syukuri.",
-    sig: "♡",
-  },
-  {
-    num: "IV",
-    txt: "Kamu bukan hanya tempat aku pulang. Kamu adalah alasan aku ingin pulang.",
-    sig: "♡",
-  },
-  {
-    num: "V",
-    txt: "Hari biasa terasa luar biasa hanya karena kamu ada di dalamnya.",
-    sig: "♡",
-  },
-  {
-    num: "VI",
-    txt: "Kalau harus mengulang segalanya aku akan tetap memilih jalan yang membawaku ke kamu.",
-    sig: "♡",
-  },
-];
-
-const bars = Array.from({ length: 28 }, (_, i) => {
-  const h =
-    [
-      10, 16, 8, 20, 14, 9, 22, 13, 18, 7, 17, 24, 9, 15, 20, 5, 17, 11, 22, 13,
-      7, 19, 15, 9, 20, 13, 17, 7,
-    ][i] || 10;
-  const on = i >= 8 && i <= 16;
-  return `<div class="sng-bar${on ? " on" : ""}" style="height:${h}px"></div>`;
-}).join("");
-
-function buildSpreads() {
-  const coverSrc = COVER || p(0);
-
-  return [
+  const LOVE_NOTES = [
     {
-      label: "Halaman 1",
-      left: `<div class="pg cov">
+      num: "I",
+      txt: "Kamu bukan kebetulan. Kamu adalah jawaban dari doa yang bahkan tidak aku sadari sedang aku panjatkan.",
+      sig: "♡",
+    },
+    {
+      num: "II",
+      txt: "Mencintai kamu terasa seperti bernapas. Mudah dan alami dan tidak bisa aku bayangkan hidup tanpanya.",
+      sig: "♡",
+    },
+    {
+      num: "III",
+      txt: "Di antara semua versi hidupku yang ada kamu di dalamnya adalah versi yang paling aku syukuri.",
+      sig: "♡",
+    },
+    {
+      num: "IV",
+      txt: "Kamu bukan hanya tempat aku pulang. Kamu adalah alasan aku ingin pulang.",
+      sig: "♡",
+    },
+    {
+      num: "V",
+      txt: "Hari biasa terasa luar biasa hanya karena kamu ada di dalamnya.",
+      sig: "♡",
+    },
+    {
+      num: "VI",
+      txt: "Kalau harus mengulang segalanya aku akan tetap memilih jalan yang membawaku ke kamu.",
+      sig: "♡",
+    },
+  ];
+
+  const bars = Array.from({ length: 28 }, (_, i) => {
+    const h =
+      [
+        10, 16, 8, 20, 14, 9, 22, 13, 18, 7, 17, 24, 9, 15, 20, 5, 17, 11, 22,
+        13, 7, 19, 15, 9, 20, 13, 17, 7,
+      ][i] || 10;
+    const on = i >= 8 && i <= 16;
+    return `<div class="sng-bar${on ? " on" : ""}" style="height:${h}px"></div>`;
+  }).join("");
+
+  function buildSpreads() {
+    const coverSrc = COVER || p(0);
+
+    return [
+      {
+        label: "Halaman 1",
+        left: `<div class="pg cov">
         <svg class="cov-bg-branch" viewBox="0 0 350 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1" stroke-linecap="round">
           <path d="M320 0 C310 60 280 120 260 180 C240 240 230 300 210 360 C190 420 170 470 150 500"/>
           <path d="M260 180 C235 168 210 158 185 145"/>
@@ -180,7 +204,7 @@ function buildSpreads() {
           <div class="cov-seal">♥</div>
         </div>
       </div>`,
-      right: `<div class="pg ltr">
+        right: `<div class="pg ltr">
         <div class="ltr-lines"></div>
         <svg class="ltr-branch" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1" stroke-linecap="round">
           <path d="M180 0 C170 50 155 100 145 150 C135 200 125 250 115 300"/>
@@ -196,11 +220,11 @@ function buildSpreads() {
         <div class="ltr-sig">Selalu milikmu &nbsp;${N1} ♡</div>
         <div class="pn" style="left:.7rem">2</div>
       </div>`,
-    },
+      },
 
-    {
-      label: "Halaman 2",
-      left: `<div class="pg abt">
+      {
+        label: "Halaman 2",
+        left: `<div class="pg abt">
         <svg class="abt-bg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
           <path d="M40 300 C50 240 70 180 80 120 C90 60 85 20 100 0"/>
           <path d="M80 180 C100 168 118 155 132 140"/>
@@ -227,7 +251,7 @@ function buildSpreads() {
         </div>
         <div class="pn" style="left:.65rem;color:rgba(255,255,255,.2)">3</div>
       </div>`,
-      right: `<div class="pg polar">
+        right: `<div class="pg polar">
         <svg class="polar-bg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1" stroke-linecap="round">
           <path d="M160 0 C150 50 135 100 125 150 C115 200 105 250 95 300"/>
           <path d="M125 90 C105 78 88 65 72 52"/>
@@ -250,11 +274,11 @@ function buildSpreads() {
         </div>
         <div class="pn" style="right:.65rem">4</div>
       </div>`,
-    },
+      },
 
-    {
-      label: "Halaman 3",
-      left: `<div class="pg abt2">
+      {
+        label: "Halaman 3",
+        left: `<div class="pg abt2">
         <svg class="abt2-corner tl" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">${CORNER_SVG.replace(/<svg[^>]*>/, "").replace("</svg>", "")}</svg>
         <svg class="abt2-corner br" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">${CORNER_SVG.replace(/<svg[^>]*>/, "").replace("</svg>", "")}</svg>
         <div class="abt2-head">Tentang kamu &nbsp;${N2} ♡</div>
@@ -275,7 +299,7 @@ function buildSpreads() {
         <div class="abt2-foot">Aku mencintaimu &nbsp;${N2} ♡</div>
         <div class="pn" style="left:.65rem">5</div>
       </div>`,
-      right: `<div class="pg mlv">
+        right: `<div class="pg mlv">
         <svg class="mlv-bg-l" viewBox="0 0 80 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1" stroke-linecap="round">
           <path d="M60 0 C55 60 45 120 40 180 C35 240 30 270 25 300"/>
           <path d="M45 80 C30 68 18 55 8 40"/>
@@ -301,11 +325,11 @@ function buildSpreads() {
         <div class="mlv-badge">${N2} &nbsp;milikku selamanya</div>
         <div class="pn" style="right:.65rem">6</div>
       </div>`,
-    },
+      },
 
-    {
-      label: "Halaman 4",
-      left: `<div class="pg gstrip">
+      {
+        label: "Halaman 4",
+        left: `<div class="pg gstrip">
         <svg class="gstrip-bg" viewBox="0 0 100 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
           <path d="M80 0 C75 80 65 160 58 240 C50 320 45 400 40 500"/>
           <path d="M62 120 C45 108 30 95 18 80"/>
@@ -322,7 +346,7 @@ function buildSpreads() {
         <div class="gstrip-note">Setiap gambar menyimpan cerita kita</div>
         <div class="pn" style="left:.65rem;color:rgba(200,160,80,.25)">7</div>
       </div>`,
-      right: `<div class="pg mom">
+        right: `<div class="pg mom">
         <svg class="mom-bg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1" stroke-linecap="round">
           <path d="M160 300 C150 240 130 180 120 120 C110 60 105 20 100 0"/>
           <path d="M125 180 C105 168 88 155 72 140"/>
@@ -339,11 +363,11 @@ function buildSpreads() {
         <div class="mom-foot">Tiap detik bersamamu adalah hadiah ♡</div>
         <div class="pn" style="right:.65rem">8</div>
       </div>`,
-    },
+      },
 
-    {
-      label: "Halaman 5",
-      left: `<div class="pg sng">
+      {
+        label: "Halaman 5",
+        left: `<div class="pg sng">
         <svg class="sng-bg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1" stroke-linecap="round">
           <path d="M20 0 C30 60 50 120 60 180 C70 240 75 270 80 300"/>
           <path d="M55 100 C75 88 90 75 102 60"/>
@@ -371,7 +395,7 @@ function buildSpreads() {
         </div>
         <div class="pn" style="left:.65rem">9</div>
       </div>`,
-      right: `<div class="pg lnv">
+        right: `<div class="pg lnv">
         <svg class="lnv-bg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
           <path d="M50 300 C60 240 78 180 88 120 C98 60 95 20 100 0"/>
           <path d="M85 160 C105 148 120 135 132 120"/>
@@ -392,11 +416,11 @@ function buildSpreads() {
         <div class="lnv-foot">Karena kamu layak tahu betapa berartinya kamu ♡</div>
         <div class="pn" style="right:.65rem;color:rgba(200,160,80,.3)">10</div>
       </div>`,
-    },
+      },
 
-    {
-      label: "Halaman 6",
-      left: `<div class="pg tiv">
+      {
+        label: "Halaman 6",
+        left: `<div class="pg tiv">
         <div class="tiv-corner-tl"></div>
         <div class="tiv-corner-br"></div>
         <svg class="tiv-bg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="1" stroke-linecap="round">
@@ -413,7 +437,7 @@ function buildSpreads() {
         <div class="tiv-foot">Dan masih banyak lagi &nbsp;${N2} ♡</div>
         <div class="pn" style="left:.65rem">11</div>
       </div>`,
-      right: `<div class="pg qpg">
+        right: `<div class="pg qpg">
         <svg class="qpg-bg-tl" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="0.8" stroke-linecap="round">
           <path d="M5 5 C5 5 25 8 35 20 C45 32 42 50 50 60 C58 70 72 72 75 75"/>
           <path d="M5 5 C10 15 8 25 15 32"/>
@@ -435,11 +459,11 @@ function buildSpreads() {
         <div class="q-sub">Always &amp; Forever ♡</div>
         <div class="pn" style="right:.65rem">12</div>
       </div>`,
-    },
+      },
 
-    {
-      label: "Halaman 7",
-      left: `<div class="pg qpg" style="background:var(--sand2)">
+      {
+        label: "Halaman 7",
+        left: `<div class="pg qpg" style="background:var(--sand2)">
         <svg class="qpg-bg-tl" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a3620" stroke-width="0.8" stroke-linecap="round">
           <path d="M5 5 C5 5 25 8 35 20 C45 32 42 50 50 60 C58 70 72 72 75 75"/>
           <path d="M5 5 C10 15 8 25 15 32"/>
@@ -459,7 +483,7 @@ function buildSpreads() {
         <div class="q-sub">Ditulis dengan cinta &nbsp;${N1} ♡</div>
         <div class="pn" style="left:.65rem">13</div>
       </div>`,
-      right: `<div class="pg bck">
+        right: `<div class="pg bck">
         <svg class="bck-bg" viewBox="0 0 350 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
           <path d="M175 0 C165 60 148 120 140 180 C132 240 128 300 120 360 C112 420 100 470 90 500"/>
           <path d="M140 120 C115 108 92 95 72 80"/>
@@ -477,148 +501,149 @@ function buildSpreads() {
           <div class="bck-brand">DumpIt &nbsp;·&nbsp; kenangan indahmu tersimpan selamanya</div>
         </div>
       </div>`,
-    },
-  ];
-}
-
-let SPREADS = [],
-  cur = 0,
-  flipping = false;
-const FLIP_MS = 460;
-
-function renderSpread(idx) {
-  document.getElementById("pageL").innerHTML = SPREADS[idx].left;
-  document.getElementById("pageR").innerHTML = SPREADS[idx].right;
-  document.getElementById("pageInd").textContent =
-    idx + 1 + " / " + SPREADS.length;
-  document.getElementById("progFill").style.width =
-    ((idx + 1) / SPREADS.length) * 100 + "%";
-  updateThumbs();
-}
-
-function flipTo(next, forward) {
-  if (flipping || next < 0 || next >= SPREADS.length) return;
-  flipping = true;
-  const fl = document.getElementById("flipLayer");
-  const ff = document.getElementById("flipFront");
-  const fb = document.getElementById("flipBack");
-  if (forward) {
-    ff.innerHTML = SPREADS[cur].right;
-    fb.innerHTML = SPREADS[next].left;
-    fl.style.cssText = `top:0;bottom:0;left:calc(20px + 50%);right:0;transform-origin:left center;transform:perspective(1400px) rotateY(0deg);backface-visibility:hidden;z-index:10;border-radius:0 8px 8px 0;overflow:hidden;`;
-    ff.style.transform = "";
-    fb.style.transform = "rotateY(180deg)";
-    document.getElementById("pageL").innerHTML = SPREADS[next].left;
-  } else {
-    ff.innerHTML = SPREADS[cur].left;
-    fb.innerHTML = SPREADS[next].right;
-    fl.style.cssText = `top:0;bottom:0;left:20px;right:calc(50%);transform-origin:right center;transform:perspective(1400px) rotateY(0deg);backface-visibility:hidden;z-index:10;border-radius:3px 0 0 8px;overflow:hidden;`;
-    ff.style.transform = "";
-    fb.style.transform = "rotateY(-180deg)";
-    document.getElementById("pageR").innerHTML = SPREADS[next].right;
+      },
+    ];
   }
-  let start = null;
-  requestAnimationFrame(function step(ts) {
-    if (!start) start = ts;
-    const t = Math.min((ts - start) / FLIP_MS, 1);
-    const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    const deg = forward ? -180 * e : 180 * e;
-    fl.style.transform = `perspective(1400px) rotateY(${deg}deg)`;
-    const mid = Math.sin(t * Math.PI);
-    fl.style.boxShadow = forward
-      ? `-${mid * 10}px 0 ${mid * 18}px rgba(0,0,0,${mid * 0.32})`
-      : `${mid * 10}px 0 ${mid * 18}px rgba(0,0,0,${mid * 0.32})`;
-    if (t < 1) {
-      requestAnimationFrame(step);
+
+  let SPREADS = [],
+    cur = 0,
+    flipping = false;
+  const FLIP_MS = 460;
+
+  function renderSpread(idx) {
+    document.getElementById("pageL").innerHTML = SPREADS[idx].left;
+    document.getElementById("pageR").innerHTML = SPREADS[idx].right;
+    document.getElementById("pageInd").textContent =
+      idx + 1 + " / " + SPREADS.length;
+    document.getElementById("progFill").style.width =
+      ((idx + 1) / SPREADS.length) * 100 + "%";
+    updateThumbs();
+  }
+
+  function flipTo(next, forward) {
+    if (flipping || next < 0 || next >= SPREADS.length) return;
+    flipping = true;
+    const fl = document.getElementById("flipLayer");
+    const ff = document.getElementById("flipFront");
+    const fb = document.getElementById("flipBack");
+    if (forward) {
+      ff.innerHTML = SPREADS[cur].right;
+      fb.innerHTML = SPREADS[next].left;
+      fl.style.cssText = `top:0;bottom:0;left:calc(20px + 50%);right:0;transform-origin:left center;transform:perspective(1400px) rotateY(0deg);backface-visibility:hidden;z-index:10;border-radius:0 8px 8px 0;overflow:hidden;`;
+      ff.style.transform = "";
+      fb.style.transform = "rotateY(180deg)";
+      document.getElementById("pageL").innerHTML = SPREADS[next].left;
     } else {
-      cur = next;
-      renderSpread(cur);
-      fl.style.transform = "";
-      fl.style.boxShadow = "";
-      fl.innerHTML = '<div id="flipFront"></div><div id="flipBack"></div>';
-      flipping = false;
+      ff.innerHTML = SPREADS[cur].left;
+      fb.innerHTML = SPREADS[next].right;
+      fl.style.cssText = `top:0;bottom:0;left:20px;right:calc(50%);transform-origin:right center;transform:perspective(1400px) rotateY(0deg);backface-visibility:hidden;z-index:10;border-radius:3px 0 0 8px;overflow:hidden;`;
+      ff.style.transform = "";
+      fb.style.transform = "rotateY(-180deg)";
+      document.getElementById("pageR").innerHTML = SPREADS[next].right;
     }
-  });
-}
-
-function goNext() {
-  flipTo(cur + 1, true);
-}
-function goPrev() {
-  flipTo(cur - 1, false);
-}
-function goTo(i) {
-  if (i !== cur) flipTo(i, i > cur);
-}
-
-let drag = null,
-  dragged = false;
-const book = document.getElementById("book");
-
-function onDown(e) {
-  drag = { x: e.touches ? e.touches[0].clientX : e.clientX };
-  dragged = false;
-}
-function onMove(e) {
-  if (!drag) return;
-  if (Math.abs((e.touches ? e.touches[0].clientX : e.clientX) - drag.x) > 8)
-    dragged = true;
-}
-function onUp(e) {
-  if (!drag) return;
-  const dx =
-    (e.changedTouches ? e.changedTouches[0].clientX : e.clientX) - drag.x;
-  drag = null;
-  if (!dragged) return;
-  if (dx < -30) goNext();
-  else if (dx > 30) goPrev();
-}
-
-book.addEventListener("touchstart", onDown, { passive: true });
-book.addEventListener("touchmove", onMove, { passive: true });
-book.addEventListener("touchend", onUp);
-book.addEventListener("mousedown", onDown);
-book.addEventListener("mousemove", onMove);
-book.addEventListener("mouseup", onUp);
-book.addEventListener("mouseleave", () => {
-  drag = null;
-  dragged = false;
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowRight" || e.key === "PageDown") goNext();
-  if (e.key === "ArrowLeft" || e.key === "PageUp") goPrev();
-});
-
-function buildThumbs() {
-  const strip = document.getElementById("thumbs");
-  strip.innerHTML = "";
-  SPREADS.forEach((sp, i) => {
-    const t = document.createElement("div");
-    t.className = "thumb" + (i === 0 ? " active" : "");
-    t.textContent = i + 1;
-    t.title = sp.label;
-    t.onclick = () => goTo(i);
-    strip.appendChild(t);
-  });
-}
-
-function updateThumbs() {
-  document
-    .querySelectorAll(".thumb")
-    .forEach((t, i) => t.classList.toggle("active", i === cur));
-  const a = document.querySelector(".thumb.active");
-  if (a)
-    a.scrollIntoView({
-      inline: "center",
-      behavior: "smooth",
-      block: "nearest",
+    let start = null;
+    requestAnimationFrame(function step(ts) {
+      if (!start) start = ts;
+      const t = Math.min((ts - start) / FLIP_MS, 1);
+      const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      const deg = forward ? -180 * e : 180 * e;
+      fl.style.transform = `perspective(1400px) rotateY(${deg}deg)`;
+      const mid = Math.sin(t * Math.PI);
+      fl.style.boxShadow = forward
+        ? `-${mid * 10}px 0 ${mid * 18}px rgba(0,0,0,${mid * 0.32})`
+        : `${mid * 10}px 0 ${mid * 18}px rgba(0,0,0,${mid * 0.32})`;
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        cur = next;
+        renderSpread(cur);
+        fl.style.transform = "";
+        fl.style.boxShadow = "";
+        fl.innerHTML = '<div id="flipFront"></div><div id="flipBack"></div>';
+        flipping = false;
+      }
     });
-}
+  }
 
-const hint = document.getElementById("swipeHint");
-setTimeout(() => hint.classList.add("hide"), 2800);
+  function goNext() {
+    flipTo(cur + 1, true);
+  }
+  function goPrev() {
+    flipTo(cur - 1, false);
+  }
+  function goTo(i) {
+    if (i !== cur) flipTo(i, i > cur);
+  }
 
-SPREADS = buildSpreads();
-buildThumbs();
-renderSpread(0);
+  let drag = null,
+    dragged = false;
+  const book = document.getElementById("book");
+
+  function onDown(e) {
+    drag = { x: e.touches ? e.touches[0].clientX : e.clientX };
+    dragged = false;
+  }
+  function onMove(e) {
+    if (!drag) return;
+    if (Math.abs((e.touches ? e.touches[0].clientX : e.clientX) - drag.x) > 8)
+      dragged = true;
+  }
+  function onUp(e) {
+    if (!drag) return;
+    const dx =
+      (e.changedTouches ? e.changedTouches[0].clientX : e.clientX) - drag.x;
+    drag = null;
+    if (!dragged) return;
+    if (dx < -30) goNext();
+    else if (dx > 30) goPrev();
+  }
+
+  book.addEventListener("touchstart", onDown, { passive: true });
+  book.addEventListener("touchmove", onMove, { passive: true });
+  book.addEventListener("touchend", onUp);
+  book.addEventListener("mousedown", onDown);
+  book.addEventListener("mousemove", onMove);
+  book.addEventListener("mouseup", onUp);
+  book.addEventListener("mouseleave", () => {
+    drag = null;
+    dragged = false;
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === "PageDown") goNext();
+    if (e.key === "ArrowLeft" || e.key === "PageUp") goPrev();
+  });
+
+  function buildThumbs() {
+    const strip = document.getElementById("thumbs");
+    strip.innerHTML = "";
+    SPREADS.forEach((sp, i) => {
+      const t = document.createElement("div");
+      t.className = "thumb" + (i === 0 ? " active" : "");
+      t.textContent = i + 1;
+      t.title = sp.label;
+      t.onclick = () => goTo(i);
+      strip.appendChild(t);
+    });
+  }
+
+  function updateThumbs() {
+    document
+      .querySelectorAll(".thumb")
+      .forEach((t, i) => t.classList.toggle("active", i === cur));
+    const a = document.querySelector(".thumb.active");
+    if (a)
+      a.scrollIntoView({
+        inline: "center",
+        behavior: "smooth",
+        block: "nearest",
+      });
+  }
+
+  const hint = document.getElementById("swipeHint");
+  setTimeout(() => hint.classList.add("hide"), 2800);
+
+  SPREADS = buildSpreads();
+  buildThumbs();
+  renderSpread(0);
+})();
