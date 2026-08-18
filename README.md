@@ -2,8 +2,6 @@
 
 > Pick a template, upload your photos, and get a beautiful scrapbook you can share and save as PDF.
 
-Live Site: [dumpit.my.id](https://dumpit.my.id)
-
 ---
 
 ## About
@@ -88,13 +86,6 @@ php -S localhost:8000
 ```
 
 Then open http://localhost:8000 in your browser.
-
----
-
-## Legal
-
-- [Terms & Conditions](https://dumpit.my.id/terms_and_condition.php)
-- [Privacy Policy](https://dumpit.my.id/privacy_policy.php)
 
 ---
 
